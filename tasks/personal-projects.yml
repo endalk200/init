@@ -1,0 +1,13 @@
+- name: Clone dockerify
+  git:
+    repo: git@github.com:endalk200/dockerify.git
+    dest: /home/src/projects/personal/dockerify
+    clone: yes
+    update: yes
+
+- name: Clone next
+  git:
+    repo: git@github.com:endalk200/next-example-.git
+    dest: /home/src/projects/personal/next-example-
+    clone: yes
+    update: yes
