@@ -14,8 +14,9 @@
       - install
       - core
   tasks:
+    - include: tasks/ssh.yml
+    - include: tasks/core.yml
     - include: tasks/zsh.yml
-    # - include: tasks/ssh.yml
     - include: tasks/dotfiles.yml
-    # - include: tasks/git.yml
-    # - include: tasks/personal-projects.yml
+    - include: tasks/git.yml
+    - include: tasks/personal-projects.yml

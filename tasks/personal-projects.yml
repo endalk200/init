@@ -5,9 +5,23 @@
     clone: yes
     update: yes
 
-- name: Clone next
+- name: Clone init
   git:
-    repo: git@github.com:endalk200/next-example-.git
-    dest: /home/src/projects/personal/next-example-
+    repo: git@github.com:endalk200/init.git
+    dest: /home/src/projects/personal/init
+    clone: yes
+    update: yes
+
+- name: Clone .dotfiles
+  git:
+    repo: git@github.com:endalk200/.dotfiles.git
+    dest: /home/src/projects/personal/.dotfiles
+    clone: yes
+    update: yes
+
+- name: Clone bookmarkhub
+  git:
+    repo: git@github.com:endalk200/bookmarkhub.git
+    dest: /home/src/projects/personal/bookmarkhub
     clone: yes
     update: yes
