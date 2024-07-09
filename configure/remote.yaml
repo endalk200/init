@@ -1,0 +1,16 @@
+- hosts: remoteMachine
+  # vars:
+  #   source_key: "./.ssh/id_rsa"
+  #   dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+  #   personal: "{{ lookup('env', 'HOME') }}/personal"
+  pre_tasks:
+    - name: Update Apt
+      become: true
+      apt:
+        force_apt_get: true
+        update_cache: true
+      tags:
+        - install
+        - core
+  tasks:
+    - include_tasks: ./tasks/core.yaml
