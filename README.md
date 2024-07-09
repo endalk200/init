@@ -11,8 +11,39 @@ This repository contains configurations (Terraform code, Ansible collections and
 - Terraform modules to provision remote dev environments on Azure and AWS.
 - Ansible playbooks to configure provisioned dev environments.
 
+## Directory structure
+
+```
+.
+├── .
+├── infrastructure/
+│   ├── aws - terraform code to provision dev machine on aws
+│   ├── azure - terraform code to provision dev machine on azure
+│   ├── gcp - terraform code to provision dev machine on gcp
+│   ├── digital-ocean - terraform code to provision dev machine on digital ocean
+│   └── linode - terraform code to provision dev machine on linode
+└── config/
+    ├── playbooks/
+    │   ├── core.yaml - playbook to install core packagaes and utilities for development
+    │   ├── zsh - playbook to install and configure zsh
+    │   └── dotfiles.yaml - playbook to clone and configure dotfiles
+    ├── scripts
+    └── remote.yaml - entry point ansible playbook to configure remote dev machines
+```
+
 ## Usage
 
-Before using init you need to install terraform and ansible. Then make sure you have sorted out ssh keys.
+Provision your resource.
 
-    ansible-playbook local.yml --ask-vault-pass
+```
+# ./infrastructure/azure
+terraform plan
+terraform apply
+```
+
+Take the generated public key and public IP address from terraform output and configure inventory.ini. Configure the provisioned resource
+
+```
+# ./configure
+ansible-playbook -i inventory.ini remote.yaml
+```

@@ -1,1 +1,37 @@
+# Terraform State Files
+*.tfstate
+*.tfstate.*
+
+# Terraform State Backup Files
+*.backup
+
+# Terraform Crash Log Files
+crash.log
+
+# Terraform Variable Files
+*.tfvars
+*.tfvars.json
+
+# .terraform Directory
+.terraform/
+.terraform.lock.hcl
+
+# Override Files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Plan Output Files
+*.tfplan
+
+# Sensitive Data Files
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+
+# Local environment files
+terraform.tfvars
+
 notes.md
